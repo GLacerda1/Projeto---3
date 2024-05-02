@@ -13,19 +13,29 @@ function validaCampo()
 //Função que adiciona a tarefa
 
 function adicionarTarefa(){
-        //criando a variavel que vai receber as tarefas
+        //Criando a variavel que vai receber as tarefas
     let linhas =document.getElementById("task");
 
     if(validaCampo()){
         alert("Preencha o campo com a tarefa")
     }else{
-        //adicionando as tarefas
+        //Adicionando as tarefas
         tarefas.push(linhas.value);
-        //passando para a proxima linha vazia
+        //Passando para a proxima linha vazia
         linhas.value="";
-        //chamando a função que vai mostrar todas as tarefas
+        //Chamando a função que vai mostrar todas as tarefas
         listarTarefas();
     }
-    //volta para o input da tarefa
+    //Volta para o input da tarefa
     document.getElementById("task").focus();
+}
+
+//Função Listar tarefas
+
+function listarTarefas(){
+    let valor="";
+    for(let i=0; i<tarefas.length;i++){
+        valor += tarefas[i] +"<br>";
+    }
+    document.getElementById("lista").innerHTML =valor;
 }
